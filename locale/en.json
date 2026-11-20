@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Workspace instruction file",
+    "description": "Pick which markdown file supplies the workspace instructions for a new session, and read the active file beside the session title."
+  }
+}

@@ -1,0 +1,26 @@
+# Workspace instruction file selection.
+#
+# Two things happen here.
+#
+# 1. This bundle inserts its own Host row.
+# 2. It empties the Workspace candidate lists of the profile-level
+#    `agent-instructions` row. `dsh-web-app` disables that row (each agent
+#    preset declares its own copy), so this override only matters for profiles
+#    that mount `agent-instructions` directly at profile level; it keeps the
+#    user-global chain of such a row and drops only its workspace candidates.
+#
+# The preset copies are adjusted at runtime by the Host plugin with
+# `fiber.update(config, true)`: the profile patch on disk is never rewritten,
+# and a process restart restores the shipped preset definitions.
+- insert:
+    - id: workspace-instructions
+      name: 'dsh-workspace-instructions'
+      config:
+        maxBytes: 65536
+
+- id: agent-instructions
+  name: '@deepseek-ai/dsh-agent-instructions'
+  config:
+    maxBytes: 65536
+    instructionFileCandidates: []
+    localInstructionFileCandidates: []
