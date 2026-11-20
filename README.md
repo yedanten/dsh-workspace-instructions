@@ -2,6 +2,8 @@
 
 Pick which markdown file supplies a session's **workspace** instructions, instead of always loading `AGENTS.md` / `CLAUDE.md` from the workspace root.
 
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 ## What it does
 
 - New Session shows a **workspace instruction file** chip next to the mode control. The default is `AGENTS.md`; `选择其他 Markdown 文件…` opens the system file dialog, limited to `.md` files inside the current workspace.
